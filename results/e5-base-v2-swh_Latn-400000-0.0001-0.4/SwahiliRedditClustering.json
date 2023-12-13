@@ -1,0 +1,10 @@
+{
+  "dataset_revision": null,
+  "mteb_dataset_name": "SwahiliRedditClustering",
+  "mteb_version": "1.1.1",
+  "test": {
+    "evaluation_time": 86.35,
+    "v_measure": 0.32475495699595003,
+    "v_measure_std": 0.02460385278488567
+  }
+}

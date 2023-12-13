@@ -1,0 +1,13 @@
+# default gitignore for python
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info
+dist/
+
+
+models/
+
