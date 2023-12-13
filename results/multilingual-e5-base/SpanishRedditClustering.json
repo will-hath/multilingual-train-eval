@@ -3,8 +3,8 @@
   "mteb_dataset_name": "SpanishRedditClustering",
   "mteb_version": "1.1.1",
   "test": {
-    "evaluation_time": 60.77,
-    "v_measure": 0.35951912429019617,
-    "v_measure_std": 0.03881455930373761
+    "evaluation_time": 60.45,
+    "v_measure": 0.3596201219706721,
+    "v_measure_std": 0.03885109012627178
   }
 }

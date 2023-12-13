@@ -49,16 +49,27 @@ if __name__ == "__main__":
     # dynamic_scalings = [4e-1, 1e-1, 1e-2]
     # for lr in lrs:
     #     for dynamic_scaling in dynamic_scalings:
+
+
     # tests = [("e5-base-v2-deu_Latn-400000-0.0001-0.4", GermanRedditClustering()),
     #           ("e5-base-v2-spa_Latn-400000-0.0001-0.4", SpanishRedditClustering()), 
     #           ("e5-base-v2-tur_Latn-400000-0.0001-0.4", TurkishRedditClustering()), 
     #           ("e5-base-v2-swh_Latn-400000-0.0001-0.4", SwahiliRedditClustering()),
     #           ("e5-base-v2-fra_Latn-400000-0.0001-0.4", FrenchRedditClustering()),
-    #           ("e5-base-v2-deu_Latn-400000-0.0001-0.4", "RedditClustering"),
-    #           ("e5-base-v2-spa_Latn-400000-0.0001-0.4", "RedditClustering"), 
-    #           ("e5-base-v2-tur_Latn-400000-0.0001-0.4", "RedditClustering"), 
-    #           ("e5-base-v2-swh_Latn-400000-0.0001-0.4", "RedditClustering"),
-    #           ("e5-base-v2-fra_Latn-400000-0.0001-0.4", "RedditClustering")]
+    # ]
+#     tests = [
+#     ("e5-base-v2-deu_Latn-400000-0.0001-0.4", GermanTwentyNewsgroupsClustering()),
+#     ("e5-base-v2-spa_Latn-400000-0.0001-0.4", SpanishTwentyNewsgroupsClustering()), 
+#     ("e5-base-v2-tur_Latn-400000-0.0001-0.4", TurkishTwentyNewsgroupsClustering()), 
+#     ("e5-base-v2-swh_Latn-400000-0.0001-0.4", SwahiliTwentyNewsgroupsClustering()),
+#     ("e5-base-v2-fra_Latn-400000-0.0001-0.4", FrenchTwentyNewsgroupsClustering()),
+# ]
+
+            #   ("e5-base-v2-deu_Latn-400000-0.0001-0.4", "RedditClustering"),
+            #   ("e5-base-v2-spa_Latn-400000-0.0001-0.4", "RedditClustering"), 
+            #   ("e5-base-v2-tur_Latn-400000-0.0001-0.4", "RedditClustering"), 
+            #   ("e5-base-v2-swh_Latn-400000-0.0001-0.4", "RedditClustering"),
+            #   ("e5-base-v2-fra_Latn-400000-0.0001-0.4", "RedditClustering")]
     # test raw_models/multilingual-e5-base on all languages
     tests = [("multilingual-e5-base", GermanRedditClustering()),
                 ("multilingual-e5-base", SpanishRedditClustering()),
@@ -68,8 +79,8 @@ if __name__ == "__main__":
     
     for model_name, task in tests:
         print(f"Running {model_name}")
-        print(f"Running {task}")
-        model = embedding_model(AutoModel.from_pretrained(f"models/trained/{model_name}"), AutoTokenizer.from_pretrained("models/tokenizers/e5-base-v2"), device=device, inference=True)
+        print(f"Running {task}") 
+        model = embedding_model(AutoModel.from_pretrained(f"models/raw_models/{model_name}"), AutoTokenizer.from_pretrained("models/tokenizers/multilingual-e5-base"), device=device, inference=True)
         evaluation = MTEB(tasks=[task], device=device, verbose=3)
         evaluation.run(model, output_folder=f"results/{model_name}/", overwrite_results=False, verbose=3)
     # model = embedding_model(AutoModel.from_pretrained(f"models/trained/{model_name}"), AutoTokenizer.from_pretrained("models/tokenizers/e5-base-v2"), device=device, inference=True)

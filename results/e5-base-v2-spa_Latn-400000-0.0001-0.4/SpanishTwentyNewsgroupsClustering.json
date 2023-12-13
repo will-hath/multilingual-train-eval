@@ -1,0 +1,10 @@
+{
+  "dataset_revision": null,
+  "mteb_dataset_name": "SpanishTwentyNewsgroupsClustering",
+  "mteb_version": "1.1.1",
+  "test": {
+    "evaluation_time": 9.56,
+    "v_measure": 0.38270772728244823,
+    "v_measure_std": 0.027510729193194573
+  }
+}

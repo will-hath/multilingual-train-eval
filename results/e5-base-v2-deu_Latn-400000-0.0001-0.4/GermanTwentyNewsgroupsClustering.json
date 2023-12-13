@@ -1,0 +1,10 @@
+{
+  "dataset_revision": null,
+  "mteb_dataset_name": "GermanTwentyNewsgroupsClustering",
+  "mteb_version": "1.1.1",
+  "test": {
+    "evaluation_time": 10.53,
+    "v_measure": 0.31931831231471797,
+    "v_measure_std": 0.013205889570255392
+  }
+}
